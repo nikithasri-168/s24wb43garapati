@@ -8,7 +8,8 @@ var logger = require('morgan');
 // Import route files
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var carsRouter = require('./routes/cars'); // Import cars router
+const carsRouter = require('./routes/cars'); // Import cars router
+const gridRouter = require('./routes/grid');
 
 // Create Express app
 var app = express();
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/cars', carsRouter); // Use carsRouter for /cars routes
+app.use('/grid', gridRouter);
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
