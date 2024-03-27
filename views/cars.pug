@@ -10,6 +10,18 @@ block content
           h3= `Make: ${car.make}`
           p= `Model: ${car.model}`
           p= `Year: ${car.year}`
+  br
+  h5= 'Buy'
+
+  div(class="container-fluid")
+    each car, index in cars
+      div(class="row", onclick=`buy(${index})`)
+        div(class="col-sm-2")
+          | car #{index}: #{car.make} Model: #{car.model} Year: #{car.year}
+  script.
+    function buy(price){
+      alert('You purchased item ' + price);
+    }
 
     
   
