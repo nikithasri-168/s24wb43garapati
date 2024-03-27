@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  .container-fluid
+    .row
+      -
+      for car in cars
+        .col-sm-2
+          h3= `Make: ${car.make}`
+          p= `Model: ${car.model}`
+          p= `Year: ${car.year}`
+
+    
+  
+
+ 
