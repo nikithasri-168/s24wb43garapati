@@ -30,6 +30,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/cars', carsRouter); // Use carsRouter for /cars routes
 app.use('/grid', gridRouter);
+app.get('/randomitem', function (req, res) {
+  res.render('randomitem', { title: 'A random item' });
+});
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
